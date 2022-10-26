@@ -12,6 +12,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import FlowerCreate from './components/FlowerCreate'
 
 const App = () => {
 
@@ -66,6 +67,13 @@ const App = () => {
             element={
               <RequireAuth user={user}>
                 <ChangePassword msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		  <Route
+            path='/flowers'
+            element={
+              <RequireAuth user={user}>
+                <FlowerCreate msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
 				</Routes>

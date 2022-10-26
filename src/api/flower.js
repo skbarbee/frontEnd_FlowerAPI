@@ -4,7 +4,7 @@ import axios from 'axios'
 export const flowerCreate = (data, user) => {
 	return axios({
 		method: 'POST',
-		url: apiUrl + '/pets',
+		url: apiUrl + '/flowers',
 		data: {
 			flower: data,
 		},

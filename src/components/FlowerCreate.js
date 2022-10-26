@@ -1,7 +1,7 @@
 import React, { useState } from 'react' 
 import { flowerCreate } from '../api/flower'
 
-const PetCreate = ({ user, msgAlert }) => {
+const FlowerCreate = ({ user, msgAlert }) => {
 
     const defaultFlower = {
         name: '',
