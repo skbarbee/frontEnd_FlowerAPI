@@ -13,3 +13,44 @@ export const flowerCreate = (data, user) => {
 		},
 	})
 }
+
+export const flowerIndex = ( user ) => {
+	return axios({
+		method: 'GET',
+		url: apiUrl + '/flowers',
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		}
+	})
+}
+export const flowerShow = ( user, id ) => {
+	return axios({
+		method: 'GET',
+		url: apiUrl + '/flowers/' + id,
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		}
+	})
+}
+
+export const flowerUpdate = (data, user, id) => {
+	return axios({
+		method: 'PATCH',
+		url: apiUrl + '/flowers/' + id,
+		data: {
+			flower: data,
+		},
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		}
+	})
+}
+export const flowerDelete = (user, id) => {
+	return axios({
+		url: apiUrl + '/flowers/' + id ,
+		method: 'DELETE',
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}

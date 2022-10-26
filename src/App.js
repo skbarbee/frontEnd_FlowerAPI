@@ -12,7 +12,9 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import FlowerIndex from './components/FlowerIndex'
 import FlowerCreate from './components/FlowerCreate'
+import FlowerShow from './components/FlowerShow'
 
 const App = () => {
 
@@ -70,10 +72,24 @@ const App = () => {
               </RequireAuth>}
           />
 		  <Route
-            path='/flowers'
+            path='/create'
             element={
               <RequireAuth user={user}>
                 <FlowerCreate msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		    <Route
+            path='/flowers'
+            element={
+              <RequireAuth user={user}>
+                <FlowerIndex msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		     <Route
+            path='/flowers/:id'
+            element={
+              <RequireAuth user={user}>
+                <FlowerShow msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
 				</Routes>

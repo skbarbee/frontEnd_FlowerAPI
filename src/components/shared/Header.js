@@ -8,6 +8,7 @@ const linkStyle = {
 }
 const authenticatedOptions = (
 	<>
+	
 		<Nav.Item>
 			<Link to='change-password' style={linkStyle}>
 				Change Password
@@ -19,8 +20,13 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 		<Nav.Item>
-			<Link to='flowers' style={linkStyle}>
+			<Link to='create' style={linkStyle}>
 				Create a Flower
+			</Link>
+		</Nav.Item>
+		<Nav.Item>
+			<Link to='flowers' style={linkStyle}>
+				Flower index
 			</Link>
 		</Nav.Item>
 	</>
