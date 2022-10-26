@@ -1,5 +1,6 @@
 import React, { useState } from 'react' 
 import { flowerCreate } from '../api/flower'
+import { useNavigate } from 'react-router-dom'
 
 const FlowerCreate = ({ user, msgAlert }) => {
 
@@ -11,6 +12,8 @@ const FlowerCreate = ({ user, msgAlert }) => {
 
     const [flower, setFlower] = useState(defaultFlower)
 
+	const navigate = useNavigate()
+
     const handleChange = (event) => {
         // to keep the values as users input info 
         // first spread the current pet
@@ -21,11 +24,13 @@ const FlowerCreate = ({ user, msgAlert }) => {
     const handleCreateFlower = () => {
         flowerCreate(flower, user)
         .then(() => {
+			
             msgAlert({
                 heading: 'Success',
                 message: 'Create Flower',
                 variant: 'success'
             })
+			navigate('/flowers')
         })
         .catch((error) => {
             msgAlert({

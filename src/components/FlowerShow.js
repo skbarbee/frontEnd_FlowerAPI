@@ -45,6 +45,8 @@ const handleUpdateFlower = () => {
 			message: 'Update Flower',
 			variant: 'success'
 		})
+		setIsUpdateShown(false)
+		
 	})
 	.catch((error) => {
 		msgAlert({
@@ -54,7 +56,27 @@ const handleUpdateFlower = () => {
 		})
 	})
 }
+const handleDeleteFlower= () => {
+    
+	flowerDelete(user, id)
+	  .then(() => {
+		
+		msgAlert({
+			heading: 'Success',
+			message: 'Deleted a Flower',
+			variant: 'success'
+		})
+		navigate('/flowers')
+	})
+      .catch((error) => {
+		msgAlert({
+			heading: 'Failure',
+			message: 'Delete Flower Failure' + error,
+			variant: 'danger'
+		})
+	})
 
+}
 	return(
 
 		
@@ -62,7 +84,8 @@ const handleUpdateFlower = () => {
 		<div className='container'>
 			<h1>{flower.name}</h1>
 		<article>
-			<p>The primary color is {flower.primaryColor}. You should plant this flower during the {flower.shouldPlant}th month of the year.</p> 
+			<p>The primary color is {flower.primaryColor}. You should plant this flower during the {flower.shouldPlant}
+			{flower.shouldPlant >= 4 && 'th ' }{flower.shouldPlant === 2 && 'nd '}{flower.shouldPlant === 3 && 'rd '}{flower.shouldPlant === 1 && 'st '} month of the year.</p> 
 			<button onClick={toggleShowUpdate}>Update</button>
 			{isUpdatedShown && (
 				<FlowerUpdate
@@ -71,6 +94,9 @@ const handleUpdateFlower = () => {
 					handleUpdateFlower = {handleUpdateFlower}
 				/>
 			)}
+			
+			<button onClick ={handleDeleteFlower}>Delete Flower</button>
+		
 		</article>
 		</div>
 	
