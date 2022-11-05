@@ -10,6 +10,7 @@ const FlowerIndex = ({user, msgAlert})=>{
 		flowerIndex(user)
 		.then(res => {
 			setAllFlowers(res.data.flowers)
+			console.log(allFlowers)
 		})
 		.catch((error) => {
             msgAlert({
@@ -38,7 +39,11 @@ const FlowerIndex = ({user, msgAlert})=>{
 
 		)
 	})
-	
+	if (!allFlowers){
+		return(
+			<p>loading...</p>
+		)
+	}
 	return(
 		
 		<>
