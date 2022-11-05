@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap"
 import FlowerIndex from "./FlowerIndex"
 
 const Home = (props) => {
@@ -6,10 +7,10 @@ const Home = (props) => {
 
 	return (
 		<>
-			<div style={{marginTop:"4px"}}>
+			<Container className="mt-5">
 			
 			<FlowerIndex />
-		</div>
+		</Container>
 		</>
 	)
 }

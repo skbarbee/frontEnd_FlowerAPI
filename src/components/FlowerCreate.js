@@ -1,6 +1,7 @@
 import React, { useState } from 'react' 
 import { flowerCreate } from '../api/flower'
 import { useNavigate } from 'react-router-dom'
+import { Container, Form, Button } from 'react-bootstrap'
 
 const FlowerCreate = ({ user, msgAlert }) => {
 
@@ -43,28 +44,35 @@ const FlowerCreate = ({ user, msgAlert }) => {
 
     return (
 			<>
-				<input
+            <Container className='m-5'>
+            <Form onSubmit={handleCreateFlower}>
+                <Form.Label>Flower Name:</Form.Label>
+				<Form.Control
 					type='text'
 					value={flower.name}
 					placeholder= 'enter name'
 					name='name'
 					onChange={handleChange}
 				/>
-				<input
+                <Form.Label>Flower's Main Color:</Form.Label>
+				<Form.Control
 					type='text'
 					value={flower.primaryColor}
 					name='primaryColor'
 					placeholder= 'enter primary color'
 					onChange={handleChange}
 				/>
-				<input
+                <Form.Label>What Month of the Year Should Your Plant:</Form.Label>
+				<Form.Control
 					type='number'
 					value={flower.shouldPlant}
 					name='shouldPlant'
 					placeholder= 'enter month of year numerically'
 					onChange={handleChange}
 				/>
-				<button onClick={handleCreateFlower}> Create Flower </button>
+				<Button type='submit'> Create Flower </Button>
+                </Form>
+            </Container>
 			</>
 		)
 }
