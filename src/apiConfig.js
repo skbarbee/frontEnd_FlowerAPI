@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'http://flowerapi.fly.dev',
+	production: 'https://flowerapi.fly.dev',
 	development: 'http://localhost:8000',
 }
 
