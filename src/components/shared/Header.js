@@ -24,11 +24,11 @@ const authenticatedOptions = (
 				Create a Flower
 			</Link>
 		</Nav.Item>
-		<Nav.Item className="m-2">
+		{/* <Nav.Item className="m-2">
 			<Link to='flowers' style={linkStyle}>
 				Flower index
 			</Link>
-		</Nav.Item>
+		</Nav.Item> */}
 	</>
 )
 
