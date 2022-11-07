@@ -22,8 +22,11 @@ const FlowerCreate = ({ user, msgAlert }) => {
         setFlower({...flower, [event.target.name]: event.target.value})
     }
 
-    const handleCreateFlower = () => {
+    const handleCreateFlower = (e) => {
+        e.preventDefault()
+
         flowerCreate(flower, user)
+        .then(res => { navigate(`/flowers`) })
         .then(() => {
 			
             msgAlert({
@@ -31,7 +34,7 @@ const FlowerCreate = ({ user, msgAlert }) => {
                 message: 'Create Flower',
                 variant: 'success'
             })
-			navigate('/flowers')
+			
         })
         .catch((error) => {
             msgAlert({
