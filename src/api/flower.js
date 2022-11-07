@@ -24,7 +24,7 @@ export const flowerIndex = ( user ) => {
 export const flowerShow = ( user, id ) => {
 	return axios({
 		method: 'GET',
-		url: apiUrl + '/flowers/' + id,
+		url: apiUrl + `/flowers/${id}`,
 		headers: {
 			Authorization: `Token token=${user.token}`,
 		}
